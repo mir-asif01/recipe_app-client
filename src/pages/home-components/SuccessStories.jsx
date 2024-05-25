@@ -15,7 +15,7 @@ function SuccessStories() {
         </div>
         <div className='flex justify-center flex-col items-center'>
             <h1 className='text-center text-2xl my-5 font-semibold'>Developer Information</h1>
-            <div className="bg-slate-200 border border-slate-900 shadow-md px-16 py-14 flex flex-col items-center">
+            <div className="bg-slate-200 border border-slate-900 shadow-md px-2 py-5 md:px-16 md:py-14 flex flex-col items-center">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4nVVH72wUxa6TgIx9FgJDat-C-TZdaut_3AXcUHNRKQ&s" className="my-2 w-36 h-36 rounded-full" alt="" />
                 <h1 className='text-xl font-bold mt-2'>Mir Kamrul Ahsan Asif</h1>
                 <p className='text-xl font-bold mt-3'>Diploma in Computer Technology <span className="text-sm animate-pulse text-green-700">(running)</span></p>
