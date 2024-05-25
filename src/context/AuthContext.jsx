@@ -25,7 +25,7 @@ const ContextProvider = ({ children }) => {
         })
         return () => unsubscribe
     }, [user])
-    const authInfo = { user, signInWithGoogle, signOutWithGoogle }
+    const authInfo = { user, setUser, signInWithGoogle, signOutWithGoogle }
     return <>
         <AuthContext.Provider value={authInfo}>
             {children}

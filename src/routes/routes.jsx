@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import AllRecipes from "../pages/AllRecipes";
 import Error from "../pages/Error";
 import AddRecipe from "../pages/AddRecipe";
+import PrivateRoute from "./PrivateRoute";
 
 const routes = createBrowserRouter([
     {
@@ -20,7 +21,7 @@ const routes = createBrowserRouter([
             },
             {
                 path: "/add-recipes",
-                element: <AddRecipe></AddRecipe>
+                element: <PrivateRoute><AddRecipe></AddRecipe></PrivateRoute>
             },
         ]
     },

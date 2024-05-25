@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom"
 import { AuthContext } from "../context/AuthContext"
 
 function Navbar() {
-    const { signInWithGoogle, signOutWithGoogle, user } = useContext(AuthContext)
+    const { signInWithGoogle, signOutWithGoogle, user, setUser } = useContext(AuthContext)
     const handleGoogleLogin = async () => {
         try {
             const res = await signInWithGoogle()
@@ -18,9 +18,8 @@ function Navbar() {
     const handleLogout = async () => {
         try {
             const res = await signOutWithGoogle()
-            if (res) {
-                alert("Log out succes")
-            }
+            setUser(null)
+
         } catch (error) {
             if (error) alert(error.message)
         }
