@@ -3,6 +3,7 @@ import MainLayout from "../layout/MainLayout";
 import Home from "../pages/Home";
 import AllRecipes from "../pages/AllRecipes";
 import Error from "../pages/Error";
+import AddRecipe from "../pages/AddRecipe";
 
 const routes = createBrowserRouter([
     {
@@ -14,8 +15,12 @@ const routes = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path: "/all-recipes",
+                path: "/recipes",
                 element: <AllRecipes></AllRecipes>
+            },
+            {
+                path: "/add-recipes",
+                element: <AddRecipe></AddRecipe>
             },
         ]
     },
