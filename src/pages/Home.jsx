@@ -1,8 +1,7 @@
 import { useContext, useEffect, useState } from "react"
 import Banner from "./home-components/Banner"
-import SuccessStories from "./home-components/SuccessStories"
 import { AuthContext } from "../context/AuthContext"
-import HomeRecipeCard from "./cards/HomeRecipeCard"
+import SingleRecipe from "./recipes-components/SingleRecipe"
 import { NavLink } from "react-router-dom"
 
 function Home() {
@@ -31,7 +30,7 @@ function Home() {
             <h1 className="text-3xl text-center">Popular recipes</h1>
             <div className="flex flex-col md:flex-row justify-center items-center gap-5  my-10">
                 {
-                    recipes.reverse().slice(0, 3).map(recipe => <HomeRecipeCard key={recipe.id} recipe={recipe}></HomeRecipeCard>)
+                    recipes.reverse().slice(0, 3).map(recipe => <SingleRecipe key={recipe.id} recipe={recipe}></SingleRecipe>)
                 }
             </div>
             <div className="flex justify-center items-center">
