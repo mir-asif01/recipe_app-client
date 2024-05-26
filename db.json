@@ -1,0 +1,62 @@
+{
+    "recipes": [
+        {
+            "id": 1,
+            "title": "Spaghetti Carbonara",
+            "description": "Classic Italian pasta dish with eggs, cheese, pancetta, and pepper.",
+            "image_link": "https://bellyfull.net/wp-content/uploads/2023/02/Spaghetti-Carbonara-blog-1-500x500.jpg",
+            "price": 12.99,
+            "category": "Italian"
+        },
+        {
+            "id": 2,
+            "title": "Chicken Alfredo",
+            "description": "Creamy pasta with grilled chicken and a rich Alfredo sauce.",
+            "image_link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa_tpfwl3y7v7LR2S5CnSx0kz2rbYPz0RkKvWJLqhugA&s",
+            "price": 14.49,
+            "category": "Spanish"
+        },
+        {
+            "id": 3,
+            "title": "Vegetable Stir Fry",
+            "description": "A mix of fresh vegetables sautéed with a savory sauce, served over rice.",
+            "image_link": "https://www.budgetbytes.com/wp-content/uploads/2022/03/Easy-Vegetable-Stir-Fry-V1.jpg",
+            "price": 10.99,
+            "category": "Asian"
+        },
+        {
+            "id": 4,
+            "title": "Beef Tacos",
+            "description": "Soft tortillas filled with seasoned beef, lettuce, cheese, and salsa.",
+            "image_link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6LfnBA78Dgwd1D17FRaD3onjELcZHq7fnsG9_82MELg&s",
+            "price": 9.99,
+            "category": "Mexican"
+        },
+        {
+            "id": 5,
+            "title": "Margherita Pizza",
+            "description": "Classic pizza with fresh tomatoes, mozzarella cheese, and basil.",
+            "image_link": "https://images.prismic.io/eataly-us/ed3fcec7-7994-426d-a5e4-a24be5a95afd_pizza-recipe-main.jpg?auto=compress,format",
+            "price": 11.99,
+            "category": "Italian"
+        }
+    ],
+    "categories": [
+        {
+            "id": 12,
+            "title": "Italian"
+        },
+        {
+            "id": 123,
+            "title": "Asian"
+        },
+        {
+            "id": 1234,
+            "title": "Mexican"
+        },
+        {
+            "id": 12345,
+            "title": "Spanish"
+        }
+    ]
+}
