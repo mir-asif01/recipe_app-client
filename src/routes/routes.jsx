@@ -6,6 +6,9 @@ import Error from "../pages/Error";
 import AddRecipe from "../pages/AddRecipe";
 import PrivateRoute from "./PrivateRoute";
 import RecipeDetails from "../pages/recipes-components/RecipeDetails";
+import DashboardLayout from "../layout/DashboardLayout";
+import DashboardHome from "../pages/dashboard/DashboardHome";
+import DashboardRecipes from "../pages/dashboard/DashboardRecipes";
 
 const routes = createBrowserRouter([
     {
@@ -31,10 +34,20 @@ const routes = createBrowserRouter([
             },
         ]
     },
-    // {
-    //     path : "dashboard",
-    //     element : 
-    // },
+    {
+        path: "dashboard",
+        element: <DashboardLayout></DashboardLayout>,
+        children: [
+            {
+                path: "dashboard",
+                element: <DashboardHome></DashboardHome>
+            },
+            {
+                path: "dashboard/recipes",
+                element: <DashboardRecipes></DashboardRecipes>
+            }
+        ]
+    },
     {
         path: "*",
         element: <Error></Error>
