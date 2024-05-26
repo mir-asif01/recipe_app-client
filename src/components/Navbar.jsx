@@ -42,7 +42,6 @@ function Navbar() {
                                 <>
                                     <NavLink className="my-2 text-xl hover:underline" to="/">Home</NavLink>
                                     <NavLink className="my-2 text-xl hover:underline" to="/recipes">Recipes</NavLink>
-                                    <NavLink className="my-2 text-xl hover:underline" to="/add-recipes">Add Recipe</NavLink>
                                     <NavLink className="my-2 text-xl btn btn-accent" to="dashboard">Dashboard</NavLink>
                                     <button onClick={handleLogout} className="mx-2 bg-slate-600 px-4 py-2 text-white text-xl rounded-md">Logout</button>
                                 </>
@@ -64,7 +63,6 @@ function Navbar() {
                         user?.email ? <>
                             <NavLink className="my-2 text-xl hover:underline" to="/">Home</NavLink>
                             <NavLink className="my-2 text-xl hover:underline" to="/recipes">Recipes</NavLink>
-                            <NavLink className="my-2 text-xl hover:underline" to="/add-recipes">Add Recipe</NavLink>
                             <NavLink className="my-2 text-xl btn btn-accent text-white" to="dashboard">Dashboard</NavLink>
                             <button onClick={handleLogout} className="mx-2 bg-slate-600 px-4 py-2 text-white text-xl rounded-md">Logout</button>
 
