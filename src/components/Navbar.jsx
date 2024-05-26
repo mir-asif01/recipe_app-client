@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import { NavLink } from "react-router-dom"
 import { AuthContext } from "../context/AuthContext"
+import { ToastContainer, toast } from 'react-toastify';
 
 function Navbar() {
     const { signInWithGoogle, signOutWithGoogle, user, setUser } = useContext(AuthContext)
@@ -8,10 +9,10 @@ function Navbar() {
         try {
             const res = await signInWithGoogle()
             if (res?.user) {
-                alert("Login succes")
+                toast.success("Login succesful")
             }
         } catch (error) {
-            alert(error.message);
+            toast.error(error.message);
         }
     }
 
@@ -19,13 +20,15 @@ function Navbar() {
         try {
             const res = await signOutWithGoogle()
             setUser(null)
+            toast.success("logout successful")
 
         } catch (error) {
-            if (error) alert(error.message)
+            if (error) toast.error(error.message)
         }
     }
 
     return <>
+        <ToastContainer autoClose={1000}></ToastContainer>
         <div className="navbar bg-base-100 md:px-10">
             <div className="navbar-start">
                 <div className="dropdown">

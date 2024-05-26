@@ -36,8 +36,8 @@ const routes = createBrowserRouter([
         element: <DashboardLayout></DashboardLayout>,
         children: [
             {
-                path: "dashboard",
-                element: <DashboardRecipes></DashboardRecipes>
+                path: "/dashboard",
+                element: <DashboardHome></DashboardHome>
             },
             {
                 path: "dashboard/recipes",
@@ -47,11 +47,6 @@ const routes = createBrowserRouter([
                 path: "dashboard/add-recipes",
                 element: <PrivateRoute><AddRecipe></AddRecipe></PrivateRoute>
             },
-            {
-                path: "dashboard/edit-recipes/:id",
-                element: <EditRecipe></EditRecipe>,
-                loader: ({ params }) => { return fetch(`http://localhost:3000/recipes/${params.id}`) }
-            }
         ]
     },
     {

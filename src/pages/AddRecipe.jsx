@@ -1,3 +1,4 @@
+import { ToastContainer, toast } from 'react-toastify'
 function AddRecipe() {
 
     const handleAddRecipe = (e) => {
@@ -25,11 +26,12 @@ function AddRecipe() {
             },
             body: JSON.stringify(recipe)
         }).then(res => res.json())
-            .then(() => alert("recipe added"))
+            .then(() => toast.success("recipe added"))
         form.reset()
     }
 
     return <>
+        <ToastContainer autoClose={1000}></ToastContainer>
         <div className="my-20 flex flex-col-reverse md:flex-row justify-center items-center gap-10 border border-slate-400 rounded-md w-full md:w-2/4 mx-auto">
             <div className="w-1/3 flex justify-center items-center">
                 <h1 className="text-2xl">Add Recipe</h1>
