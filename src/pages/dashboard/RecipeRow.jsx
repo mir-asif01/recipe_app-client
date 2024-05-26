@@ -1,5 +1,18 @@
-function RecipeRow({ recipe }) {
-    const { title, image_link } = recipe
+import { NavLink } from "react-router-dom"
+
+function RecipeRow({ recipe, recipes, setRecipes }) {
+    const { id, title, image_link } = recipe
+
+    const handleDeleteRecipe = (id) => {
+        setRecipes(recipes.filter(r => r.id !== id))
+        fetch(`http://localhost:3000/recipes/${id}`, {
+            method: "DELETE",
+            headers: {
+                "content-type": "application/json"
+            },
+        }).then(res => res.json())
+            .then(() => alert('recipe deleted'))
+    }
     return <>
         <tr>
             <td>
@@ -15,10 +28,10 @@ function RecipeRow({ recipe }) {
                 {title}
             </td>
             <td>
-                <button className="btn btn-info text-white">Edit</button>
+
             </td>
             <td>
-                <button className="btn btn-error text-white">Delete</button>
+                <button onClick={() => handleDeleteRecipe(id)} className="btn btn-error text-white">Delete</button>
             </td>
         </tr>
     </>

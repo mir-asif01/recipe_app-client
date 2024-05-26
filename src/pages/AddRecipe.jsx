@@ -26,6 +26,7 @@ function AddRecipe() {
             body: JSON.stringify(recipe)
         }).then(res => res.json())
             .then(() => alert("recipe added"))
+        form.reset()
     }
 
     return <>

@@ -17,7 +17,6 @@ function DashboardRecipes() {
     useEffect(() => {
         fetchRecipes()
     }, [])
-    console.log(recipes);
     return <>
         <div className="overflow-x-auto">
             <h1 className="mt-10 text-center text-3xl font-bold">All Recipes</h1>
@@ -34,7 +33,7 @@ function DashboardRecipes() {
                 <tbody>
                     {/* row 1 */}
                     {
-                        recipes.map(recipe => <RecipeRow key={recipe.id} recipe={recipe}></RecipeRow>)
+                        recipes.map(recipe => <RecipeRow key={recipe.id} recipe={recipe} setRecipes={setRecipes} recipes={recipes}></RecipeRow>)
                     }
                 </tbody>
             </table>

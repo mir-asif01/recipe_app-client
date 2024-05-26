@@ -9,6 +9,7 @@ import RecipeDetails from "../pages/recipes-components/RecipeDetails";
 import DashboardLayout from "../layout/DashboardLayout";
 import DashboardHome from "../pages/dashboard/DashboardHome";
 import DashboardRecipes from "../pages/dashboard/DashboardRecipes";
+import EditRecipe from "../pages/dashboard/EditRecipe";
 
 const routes = createBrowserRouter([
     {
@@ -36,7 +37,7 @@ const routes = createBrowserRouter([
         children: [
             {
                 path: "dashboard",
-                element: <DashboardHome></DashboardHome>
+                element: <DashboardRecipes></DashboardRecipes>
             },
             {
                 path: "dashboard/recipes",
@@ -46,6 +47,11 @@ const routes = createBrowserRouter([
                 path: "dashboard/add-recipes",
                 element: <PrivateRoute><AddRecipe></AddRecipe></PrivateRoute>
             },
+            {
+                path: "dashboard/edit-recipes/:id",
+                element: <EditRecipe></EditRecipe>,
+                loader: ({ params }) => { return fetch(`http://localhost:3000/recipes/${params.id}`) }
+            }
         ]
     },
     {
