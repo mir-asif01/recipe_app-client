@@ -1,4 +1,6 @@
+import { Link, NavLink } from "react-router-dom"
 import { ToastContainer, toast } from "react-toastify"
+import EditModal from "./EditModal"
 
 function RecipeRow({ recipe, recipes, setRecipes }) {
     const { id, title, image_link } = recipe
@@ -38,11 +40,11 @@ function RecipeRow({ recipe, recipes, setRecipes }) {
                 {title}
             </td>
             <td>
-                <button className="btn btn-info text-white">Edit</button>
+                <NavLink to={"dashboard/edit"}>Edit</NavLink>
             </td>
             <td>
                 <button onClick={() => handleDeleteRecipe(id)} className="btn btn-error text-white">Delete</button>
-                <button onClick={() => {
+                {/* <button onClick={() => {
                     const yes = window.confirm("yehnn")
                     if (yes) {
 
@@ -51,7 +53,7 @@ function RecipeRow({ recipe, recipes, setRecipes }) {
                         }
                         showToast()
                     }
-                }}>Sho Toast</button>
+                }}>Sho Toast</button> */}
             </td>
         </tr>
     </>

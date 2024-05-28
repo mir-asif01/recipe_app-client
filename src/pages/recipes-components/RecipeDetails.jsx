@@ -1,7 +1,6 @@
 import { useLoaderData } from "react-router-dom"
 
 function RecipeDetails() {
-
     const recipe = useLoaderData()
     const { id, category, description, image_link, price, title } = recipe
     return <>

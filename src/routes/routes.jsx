@@ -32,7 +32,7 @@ const routes = createBrowserRouter([
         ]
     },
     {
-        path: "dashboard",
+        path: "/dashboard",
         element: <DashboardLayout></DashboardLayout>,
         children: [
             {
@@ -47,6 +47,10 @@ const routes = createBrowserRouter([
                 path: "dashboard/add-recipes",
                 element: <PrivateRoute><AddRecipe></AddRecipe></PrivateRoute>
             },
+            {
+                path: "dashboard/edit-recipe",
+                element: <EditRecipe></EditRecipe>
+            }
         ]
     },
     {
