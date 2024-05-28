@@ -1,19 +1,29 @@
-import { NavLink } from "react-router-dom"
+import { ToastContainer, toast } from "react-toastify"
 
 function RecipeRow({ recipe, recipes, setRecipes }) {
     const { id, title, image_link } = recipe
 
     const handleDeleteRecipe = (id) => {
-        setRecipes(recipes.filter(r => r.id !== id))
-        fetch(`http://localhost:3000/recipes/${id}`, {
-            method: "DELETE",
-            headers: {
-                "content-type": "application/json"
-            },
-        }).then(res => res.json())
-            .then(() => alert('recipe deleted'))
+        const proceedToDelete = window.confirm("Are you sure to delete the recipe?")
+        if (proceedToDelete) {
+            setRecipes(recipes.filter(r => r.id !== id))
+            fetch(`http://localhost:3000/recipes/${id}`, {
+                method: "DELETE",
+                headers: {
+                    "content-type": "application/json"
+                },
+            }).then(res => res.json())
+                .then(() => {
+                    toast.success("Recipe deleted!")
+                    alert("recipe deleted")
+                })
+        } else {
+            return 0;
+        }
     }
+
     return <>
+        <ToastContainer autoClose={1000}></ToastContainer>
         <tr>
             <td>
                 <div className="flex items-center gap-3">
@@ -28,10 +38,20 @@ function RecipeRow({ recipe, recipes, setRecipes }) {
                 {title}
             </td>
             <td>
-
+                <button className="btn btn-info text-white">Edit</button>
             </td>
             <td>
                 <button onClick={() => handleDeleteRecipe(id)} className="btn btn-error text-white">Delete</button>
+                <button onClick={() => {
+                    const yes = window.confirm("yehnn")
+                    if (yes) {
+
+                        const showToast = () => {
+                            toast.success("taosjjjjjj")
+                        }
+                        showToast()
+                    }
+                }}>Sho Toast</button>
             </td>
         </tr>
     </>

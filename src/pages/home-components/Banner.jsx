@@ -10,7 +10,6 @@ function Banner() {
                     <p className="mb-5 text-xl font-semibold">Share your recipes with the world. As well as see others recipes. Earn and spend recipe coins!</p>
                     <div className="flex gap-2 justify-center items-center">
                         <button className="my-2 bg-purple-600 px-4 py-2 text-white text-xl rounded-md"><NavLink to="/recipes">See Recipes</NavLink></button>
-                        <button className="my-2 bg-purple-600 px-4 py-2 text-white text-xl rounded-md"><NavLink to="/add-recipes">Add Recipe</NavLink></button>
                     </div>
                 </div>
             </div>

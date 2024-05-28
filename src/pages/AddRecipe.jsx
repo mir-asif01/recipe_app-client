@@ -2,32 +2,40 @@ import { ToastContainer, toast } from 'react-toastify'
 function AddRecipe() {
 
     const handleAddRecipe = (e) => {
-        e.preventDefault()
-        const form = e.target
-        const id = form.id.value
-        const title = form.recipe_title.value
-        const image_link = form.recipe_image.value
-        const description = form.description.value
-        const category = form.category.value
-        const price = form.price.value
 
-        const recipe = {
-            id,
-            title,
-            description,
-            image_link,
-            price,
-            category
+        const proceedToAddRecipe = window.confirm("Please click ok to add recipe.")
+        if (proceedToAddRecipe) {
+            e.preventDefault()
+            const form = e.target
+            const id = form.id.value
+            const title = form.recipe_title.value
+            const image_link = form.recipe_image.value
+            const description = form.description.value
+            const category = form.category.value
+            const price = form.price.value
+
+            const recipe = {
+                id,
+                title,
+                description,
+                image_link,
+                price,
+                category
+            }
+            fetch("http://localhost:3000/recipes", {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify(recipe)
+            }).then(res => res.json())
+                .then(() => toast.success("recipe added"))
+            form.reset()
+        } else {
+            return 0;
         }
-        fetch("http://localhost:3000/recipes", {
-            method: "POST",
-            headers: {
-                "content-type": "application/json"
-            },
-            body: JSON.stringify(recipe)
-        }).then(res => res.json())
-            .then(() => toast.success("recipe added"))
-        form.reset()
+
+
     }
 
     return <>

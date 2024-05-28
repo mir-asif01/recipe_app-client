@@ -39,14 +39,6 @@
       "image_link": "https://images.prismic.io/eataly-us/ed3fcec7-7994-426d-a5e4-a24be5a95afd_pizza-recipe-main.jpg?auto=compress,format",
       "price": 11.99,
       "category": "Italian"
-    },
-    {
-      "id": "341",
-      "title": "dal bhat",
-      "description": "gg dg gg gggd gf dddds ssghh df gggss gsaa",
-      "image_link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrzEx73UH0d-nQSuKusGScz6C9hYLbTCJri0U4AYeVvQ&s",
-      "price": "10",
-      "category": "Asian"
     }
   ],
   "categories": [
